@@ -34,15 +34,16 @@ export default function SaveTeacher() {
         },
     })
 
-    async function onSubmit(student: z.infer<typeof FormSchema>) {
+    async function onSubmit(teachers: z.infer<typeof FormSchema>) {
         const requestOption= {
             method: "POST",
             headers:{'Content-Type':'application/json'},
-            body: JSON.stringify(student)
+            body: JSON.stringify(teachers)
         }
+        console.log(JSON.stringify(teachers))
         const response = await fetch("https://server20241-liart.vercel.app/teachers",requestOption)
         form.reset();
-        alert("Estudante Cadastrado com Sucesso!")
+        alert("professor Cadastrado com Sucesso!")
 
 
     }
