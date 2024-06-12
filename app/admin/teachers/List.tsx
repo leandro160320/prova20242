@@ -10,7 +10,6 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { revalidatePath } from "next/cache";
-import { Form } from "react-hook-form";
 
 
 
@@ -20,9 +19,9 @@ interface ITeatcher {
   email:string
 }
 export default async function ListTeacher() {
-  const student = await list()
+  const teachers = await list()
   async function list(){
-    revalidatePath("/admin/teacher")
+    revalidatePath("/admin/teachers")
     const response = await fetch("https://server20241-liart.vercel.app/teachers");
       return response.json();
 
