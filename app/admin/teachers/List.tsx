@@ -19,7 +19,7 @@ interface ITeatcher {
   email:string
 }
 export default async function ListTeacher() {
-  const teachers = await list()
+  const teacher = await list()
   async function list(){
     revalidatePath("/admin/teachers")
     const response = await fetch("https://server20241-liart.vercel.app/teachers");
@@ -46,7 +46,7 @@ export default async function ListTeacher() {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {student.map((item:ITeatcher) => (
+        {teacher.map((item:ITeatcher) => (
           <TableRow key={item.id}>
             <TableCell className="font-medium">{item.id}</TableCell>
             <TableCell>{item.name}</TableCell>
