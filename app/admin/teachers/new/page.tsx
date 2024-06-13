@@ -34,12 +34,12 @@ export default function SaveTeacher() {
         },
     })
 
-    async function onSubmit(teacher: z.infer<typeof FormSchema>) {
-        console.log(JSON.stringify(teacher))
+    async function onSubmit(teachers: z.infer<typeof FormSchema>) {
+        console.log(JSON.stringify(teachers))
         const requestOption= {
             method: "POST",
             headers:{'Content-Type':'application/json'},
-            body: JSON.stringify(teacher)
+            body: JSON.stringify(teachers)
         }
         const response = await fetch("https://server20241-liart.vercel.app/teachers", requestOption)
         const teacher1 = await response.json();
