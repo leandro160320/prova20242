@@ -29,21 +29,22 @@ export default function SaveTeacher() {
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
-            name: "Leandro",
-            email: "leh.b@hotmail.com",
+            name: "Bianchini",
+            email: "bianchini@hotmail.com",
         },
     })
 
-    async function onSubmit(teachers: z.infer<typeof FormSchema>) {
+    async function onSubmit(teacher: z.infer<typeof FormSchema>) {
+        console.log(JSON.stringify(teacher))
         const requestOption= {
             method: "POST",
             headers:{'Content-Type':'application/json'},
-            body: JSON.stringify(teachers)
+            body: JSON.stringify(teacher)
         }
-        console.log(JSON.stringify(teachers))
-        const response = await fetch("https://server20241-liart.vercel.app/teachers",requestOption)
+        const response = await fetch("https://server20241-liart.vercel.app/teachers", requestOption)
+        const teacher1 = await response.json();
         form.reset();
-        alert("professor Cadastrado com Sucesso!")
+        alert("Professor Cadastrado com Sucesso!")
 
 
     }
@@ -58,7 +59,7 @@ export default function SaveTeacher() {
                         <FormItem>
                             <FormLabel>Nome</FormLabel>
                             <FormControl>
-                                <Input placeholder="Digite nome do professor" {...field} />
+                                <Input placeholder="Digite nome do Professor" {...field} />
                             </FormControl>
 
                             <FormMessage />
@@ -73,7 +74,7 @@ export default function SaveTeacher() {
                         <FormItem>
                             <FormLabel>email</FormLabel>
                             <FormControl>
-                                <Input placeholder="Digite o email do professor" {...field} />
+                                <Input placeholder="Digite o email do Professor" {...field} />
                             </FormControl>
 
                             <FormMessage />
@@ -85,3 +86,4 @@ export default function SaveTeacher() {
         </Form>
     )
 }
+    

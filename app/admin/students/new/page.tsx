@@ -29,7 +29,7 @@ export default function SaveStudent() {
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
-            name: "Leandro",
+            name: "Le",
             email: "leh.b@hotmail.com",
         },
     })
