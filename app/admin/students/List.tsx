@@ -10,18 +10,18 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { revalidatePath } from "next/cache";
-import { Form } from "react-hook-form";
 
 
 
 interface IStudent {
   id:number,
   name:string,
-  email:string
+  email:string,
+  
 }
 export default async function ListStudent() {
   const students = await list()
-  async function list(){
+    async function list(){
     revalidatePath("/admin/students")
     const response = await fetch("https://server20241-liart.vercel.app/students");
       return response.json();
@@ -43,15 +43,15 @@ export default async function ListStudent() {
           <TableHead className="w-[100px]">ID</TableHead>
           <TableHead>Nome</TableHead>
           <TableHead>Email</TableHead>
-          <TableHead>Ação</TableHead>
+          <TableHead>Ação</TableHead>         
         </TableRow>
       </TableHeader>
       <TableBody>
         {students.map((item:IStudent) => (
           <TableRow key={item.id}>
             <TableCell className="font-medium">{item.id}</TableCell>
-            <TableCell>{item.name}</TableCell>
-            <TableCell>{item.email}</TableCell>
+            <TableCell>{item.name}</TableCell> 
+            <TableCell>{item.email}</TableCell> 
             <TableCell> 
               <form>
               <input type="text" name="id"hidden value={item.id} />
@@ -59,9 +59,7 @@ export default async function ListStudent() {
               </form>
               
               
-            </TableCell>
-            
-
+            </TableCell>           
           </TableRow>
         ))}
       </TableBody>

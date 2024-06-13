@@ -21,7 +21,6 @@ const FormSchema = z.object({
     name: z.string().min(2, {
         message: "Nome precisa tem no mínimo 2 caracteres."
     }),
-
     email: z.string().email({ message: "Digite o email correto" }),
 })
 
@@ -31,18 +30,18 @@ export default function SaveTeacher() {
         defaultValues: {
             name: "Bianchini",
             email: "bianchini@hotmail.com",
+
         },
     })
 
     async function onSubmit(teachers: z.infer<typeof FormSchema>) {
-        console.log(JSON.stringify(teachers))
-        const requestOption= {
+        const requestOption = {
             method: "POST",
-            headers:{'Content-Type':'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(teachers)
         }
+        console.log(JSON.stringify(teachers))
         const response = await fetch("https://server20241-liart.vercel.app/teachers", requestOption)
-        const teacher1 = await response.json();
         form.reset();
         alert("Professor Cadastrado com Sucesso!")
 

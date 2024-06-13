@@ -7,7 +7,7 @@ export default function Teacher(){
         
         <div className="w-full flex flex-col mt-6">
             <div className="flex justify-center mb-6">
-            <a href="/admin/teacher/new">
+            <a href="/admin/teachers/new">
                 <Button>Cadastrar Professor</Button>
             </a>
             

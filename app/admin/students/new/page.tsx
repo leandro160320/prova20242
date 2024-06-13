@@ -21,7 +21,6 @@ const FormSchema = z.object({
     name: z.string().min(2, {
         message: "Nome precisa tem no mínimo 2 caracteres."
     }),
-
     email: z.string().email({ message: "Digite o email correto" }),
 })
 
@@ -29,18 +28,20 @@ export default function SaveStudent() {
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
-            name: "Le",
-            email: "leh.b@hotmail.com",
+            name: "leandro",
+            email: "leandro@hotmail.com"
+
         },
     })
 
     async function onSubmit(students: z.infer<typeof FormSchema>) {
-        const requestOption= {
+        const requestOption = {
             method: "POST",
-            headers:{'Content-Type':'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(students)
         }
-        const response = await fetch("https://server20241-liart.vercel.app/students",requestOption)
+        console.log(JSON.stringify(students))
+        const response = await fetch("https://server20241-liart.vercel.app/students", requestOption)
         form.reset();
         alert("Estudante Cadastrado com Sucesso!")
 
@@ -63,6 +64,7 @@ export default function SaveStudent() {
                             <FormMessage />
                         </FormItem>
                     )}
+
                 />
 
                 <FormField
@@ -79,6 +81,8 @@ export default function SaveStudent() {
                         </FormItem>
                     )}
                 />
+
+
                 <Button type="submit">Submit</Button>
             </form>
         </Form>

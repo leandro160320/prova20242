@@ -10,17 +10,17 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { revalidatePath } from "next/cache";
-import { Form } from "react-hook-form";
 
 
 
 interface ITeacher {
   id:number,
   name:string,
-  email:string
+  email:string,
+
 }
 export default async function ListTeacher() {
-  const teacher = await list()
+  const teachers = await list()
   async function list(){
     revalidatePath("/admin/teachers")
     const response = await fetch("https://server20241-liart.vercel.app/teachers");
@@ -47,7 +47,7 @@ export default async function ListTeacher() {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {teacher.map((item:ITeacher) => (
+        {teachers.map((item:ITeacher) => (
           <TableRow key={item.id}>
             <TableCell className="font-medium">{item.id}</TableCell>
             <TableCell>{item.name}</TableCell>

@@ -29,7 +29,7 @@ export default function SaveSubject() {
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
-            name: "HTML",
+            name: "INFORMÁTICA",
             
         },
     })

@@ -36,6 +36,7 @@ export  default function NewTeacher() {
               className="col-span-3"
             />
           </div>
+          
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="username" className="text-right">
               Email
@@ -46,6 +47,8 @@ export  default function NewTeacher() {
               className="col-span-3"
             />
           </div>
+
+
         </div>
         <DialogFooter>
           <Button type="submit">Salvar</Button>

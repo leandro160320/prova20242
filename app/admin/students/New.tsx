@@ -22,7 +22,7 @@ export  default function NewStudent() {
         <DialogHeader>
           <DialogTitle>Cadastrar Estudante</DialogTitle>
           <DialogDescription>
-            Inclua os dados do estudante e click em salvar
+            Inclua os dados do Estudante e click em salvar
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
@@ -32,20 +32,23 @@ export  default function NewStudent() {
             </Label>
             <Input
               id="name"
-              defaultValue="Pedro Duarte"
+              defaultValue="leandro"
               className="col-span-3"
             />
           </div>
+
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="username" className="text-right">
               Email
             </Label>
             <Input
               id="username"
-              defaultValue="@peduarte"
+              defaultValue="@leandro"
               className="col-span-3"
             />
           </div>
+          
+          
         </div>
         <DialogFooter>
           <Button type="submit">Salvar</Button>

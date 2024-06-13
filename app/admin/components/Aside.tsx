@@ -17,7 +17,7 @@ export default function Aside({ className }: any) {
                     </Button>
                 </a>
 
-                <a href="/admin/student">
+                <a href="/admin/students">
                     <Button variant="ghost">
                         <User2Icon className="mr-2" />
                         Estudante
