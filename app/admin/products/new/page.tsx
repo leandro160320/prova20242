@@ -71,7 +71,7 @@ export default function SaveProduct() {
 
                 <FormField
                     control={form.control}
-                    description="description"
+                    name="description"
                     render={({ field }) => (
                         <FormItem>
                             <FormLabel>Descrição</FormLabel>
