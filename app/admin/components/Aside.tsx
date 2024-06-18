@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { BookAIcon, Briefcase, CaptionsIcon, CarFront, Folder, Home, Package, PersonStanding, User, User2Icon } from "lucide-react";
+import { BookAIcon, Briefcase, CaptionsIcon, CarFront, Folder, Home, Package, PersonStanding, Square, User, User2Icon } from "lucide-react";
 
 
 export default function Aside({ className }: any) {
@@ -56,6 +56,13 @@ export default function Aside({ className }: any) {
                     <Button variant="ghost">
                         <CarFront className="mr-2" />
                         Carros
+                    </Button>
+                </a>
+
+                <a href="/admin/drivers">
+                    <Button variant="ghost">
+                        <User2Icon className="mr-2" />
+                        Motoristas
                     </Button>
                 </a>
 
