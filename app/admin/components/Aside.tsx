@@ -17,40 +17,6 @@ export default function Aside({ className }: any) {
                     </Button>
                 </a>
 
-                <a href="/admin/students">
-                    <Button variant="ghost">
-                        <User2Icon className="mr-2" />
-                        Estudante
-                    </Button>
-                </a>
-
-                <a href="/admin/courses">
-                    <Button variant="ghost">
-                        <Folder className="mr-2" />
-                        Curso
-                    </Button>
-                </a>
-
-                <a href="/admin/subjects">
-                    <Button variant="ghost">
-                        <CaptionsIcon className="mr-2" />
-                        Materia
-                    </Button>
-                </a>
-
-                <a href="/admin/teachers">
-                    <Button variant="ghost">
-                        <Briefcase className="mr-2" />
-                        Professor
-                    </Button>
-                </a>
-
-                <a href="/admin/products">
-                    <Button variant="ghost">
-                        <Package className="mr-2" />
-                        Produtos
-                    </Button>
-                </a>
 
                 <a href="/admin/cars">
                     <Button variant="ghost">
